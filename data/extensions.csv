@@ -1,0 +1,19 @@
+route,line,status,seq,station,lat,lon,new
+U3 Mexikoplatz,U3,planning,1,Krumme Lanke,52.44330,13.24130,0
+U3 Mexikoplatz,U3,planning,2,Mexikoplatz,52.43690,13.23280,1
+U8 Märkisches Viertel,U8,planning,1,Wittenau,52.59580,13.33450,0
+U8 Märkisches Viertel,U8,planning,2,Senftenberger Ring,52.59850,13.34400,1
+U8 Märkisches Viertel,U8,planning,3,Märkisches Zentrum,52.60150,13.35650,1
+U7 BER,U7,study,1,Rudow,52.41570,13.49640,0
+U7 BER,U7,study,2,Lieselotte-Berger-Platz,52.40600,13.50300,1
+U7 BER,U7,study,3,Schönefeld Nord,52.39650,13.50800,1
+U7 BER,U7,study,4,Bahnhof Schönefeld,52.39100,13.51300,1
+U7 BER,U7,study,5,Schönefelder Seen,52.38400,13.52000,1
+U7 BER,U7,study,6,Airtown Nord,52.37300,13.51400,1
+U7 BER,U7,study,7,Midfield Gardens (optional),52.36700,13.50300,1
+U7 BER,U7,study,8,Flughafen BER,52.36440,13.51010,1
+U2 Pankow Kirche,U2,study,1,Pankow,52.56740,13.41200,0
+U2 Pankow Kirche,U2,study,2,Pankow Kirche,52.57000,13.40450,1
+U7 Heerstraße Nord,U7,stopped,1,Rathaus Spandau,52.53530,13.19980,0
+U7 Heerstraße Nord,U7,stopped,2,Wilhelmstraße,52.52500,13.18100,1
+U7 Heerstraße Nord,U7,stopped,3,Heerstraße Nord,52.51650,13.15600,1

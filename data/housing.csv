@@ -1,0 +1,18 @@
+name,district,homes,status,completion,lat,lon,checked,source
+Buschkrugallee 84 / Hannemannstraße,Neukölln (Britz),160,planned,,52.45620,13.44750,no,entwicklungsstadt.de
+Britzer Terrassen (Tempelhofer Weg / Britzer Damm),Neukölln (Britz),1000,planned,2028,52.46300,13.43100,no,BA Neukölln B-Plan 8-98
+Hugos Wohngärten (Britzer Straße),Tempelhof-Schöneberg (Mariendorf),454,under construction,,52.44100,13.40100,no,BA Tempelhof-Schöneberg
+Wasserstadt Oberhavel,Spandau,13250,under construction,2027,52.55500,13.21500,no,entwicklungsstadt.de
+Das Neue Gartenfeld,Spandau,3700,under construction,2028,52.54400,13.25600,no,entwicklungsstadt.de
+Schumacher Quartier,Reinickendorf (Tegel),5000,under construction,2032,52.55600,13.29500,no,entwicklungsstadt.de
+Blankenburger Süden,Pankow,8600,planned,2035,52.58500,13.44300,no,entwicklungsstadt.de
+Am Sandhaus,Pankow (Buch),2700,planned,2029,52.63800,13.49000,no,entwicklungsstadt.de
+Pankower Tor,Pankow,2000,planned,2030,52.56800,13.41900,no,entwicklungsstadt.de
+Karow Süd,Pankow,5000,planned,2040,52.61000,13.46500,no,entwicklungsstadt.de
+Elisabeth-Aue,Pankow (Blankenfelde),5000,planned,2035,52.61500,13.39500,no,entwicklungsstadt.de
+Michelangelostraße,Pankow (Prenzlauer Berg),1200,planned,,52.54800,13.44200,no,entwicklungsstadt.de
+Konnekt (Georg-Knorr-Park),Marzahn-Hellersdorf,1600,under construction,,52.54200,13.53300,no,entwicklungsstadt.de
+Neulichterfelde,Steglitz-Zehlendorf,2000,under construction,,52.41800,13.31300,no,entwicklungsstadt.de
+Ehem. Güterbahnhof Köpenick,Treptow-Köpenick,1800,planned,,52.46000,13.57700,no,entwicklungsstadt.de
+Segelflieger Quartier,Treptow-Köpenick (Johannisthal),1800,under construction,2030,52.44000,13.52500,no,entwicklungsstadt.de
+Dreieck Späthsfelde,Treptow-Köpenick,4000,planned,,52.45000,13.49300,no,entwicklungsstadt.de

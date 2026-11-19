@@ -1,0 +1,20 @@
+# everything the scripts generate (downloads, caches, layers, reports)
+output/*
+!output/.gitkeep
+
+# census download (large, get it from zensus2022.de)
+data/*.zip
+
+# QGIS project files contain local paths - each user saves their own
+*.qgz
+*.qgs
+*.qgz~
+*.qgs~
+*_attachments.zip
+
+# Python / OS clutter
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+desktop.ini
