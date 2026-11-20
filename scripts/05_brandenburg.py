@@ -72,10 +72,20 @@ def save(layer, filename, name):
 
 # ---------------------------------------------------- 1. Berlin outline (cached)
 mask_path = os.path.join(folder, "berlin_umriss.gpkg")
-if not os.path.exists(mask_path):
+_old_mask = QgsVectorLayer(mask_path, "check", "ogr") if os.path.exists(mask_path) else None
+if _old_mask is not None and (not _old_mask.isValid() or _old_mask.featureCount() == 0):
+    print("    old Berlin outline file is broken - rebuilding it")
+    del _old_mask
+    os.remove(mask_path)
+    _old_mask = None
+if _old_mask is None:
     print("Building the Berlin outline (once, takes a few minutes) ...")
+    fixed = processing.run("native:fixgeometries", {
+        "INPUT": density_src, "OUTPUT": "memory:"})["OUTPUT"]
+    print("    geometries checked, merging blocks ...")
     dissolved = processing.run("native:dissolve", {
-        "INPUT": density_src, "FIELD": [], "OUTPUT": "memory:"})["OUTPUT"]
+        "INPUT": fixed, "FIELD": [], "OUTPUT": "memory:"})["OUTPUT"]
+    print("    merged, closing street gaps ...")
     processing.run("native:buffer", {          # closes the gaps where streets are
         "INPUT": dissolved, "DISTANCE": 30, "SEGMENTS": 4, "DISSOLVE": True,
         "OUTPUT": mask_path})
@@ -114,7 +124,9 @@ with zf.open(member) as raw:
     ix = next(i for i, h in enumerate(header) if h.startswith("x_mp"))
     iy = next(i for i, h in enumerate(header) if h.startswith("y_mp"))
     ie = next(i for i, h in enumerate(header) if "einwohner" in h)
-    for row in reader:
+    for row_no, row in enumerate(reader):
+        if row_no % 500000 == 0 and row_no:
+            print(f"    {row_no:,} grid rows read, {len(feats):,} cells kept")
         try:
             x, y = float(row[ix]), float(row[iy])
         except (ValueError, IndexError):
@@ -128,7 +140,8 @@ with zf.open(member) as raw:
         if people <= 0:
             continue
         centre = to_utm.transform(QgsPointXY(x, y))
-        if engine.contains(QgsGeometry.fromPointXY(centre).constGet()):
+        centre_geom = QgsGeometry.fromPointXY(centre)     # keep it alive while QGIS uses it
+        if engine.contains(centre_geom.constGet()):
             skipped_berlin += 1
             continue
         ring = [to_utm.transform(QgsPointXY(x + dx, y + dy))
